@@ -50,7 +50,7 @@ import BookForm from './Bookform'
     ))
     return (
       <div>
-        <h1>Books</h1>
+        <h1>My Library</h1>
         <br/>
         <button onClick={this._showBookButton.bind(null, true)}>Add</button>
         { this.state.showForm && ( <BookForm />) }
