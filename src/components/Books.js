@@ -6,7 +6,9 @@ import BookForm from './Bookform'
 
    constructor() {
      super();
-     this.state = { showBookButton: false }
+     this.state = { 
+       showBookButton: false 
+      }
    }
 
    _showBookButton = (bool) => {

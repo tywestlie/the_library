@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import StarRatingComponent from 'react-star-rating-component';
 
  class BookForm extends Component {
 
@@ -9,8 +10,8 @@ import React, { Component } from 'react'
        author: '',
        publisher: '',
        publicationDate: '',
-       rating: '',
-       status: '',
+       rating: 1,
+       status: ''
      }
 
      this.onChange = this.onChange.bind(this);
@@ -19,6 +20,10 @@ import React, { Component } from 'react'
 
    onChange(e) {
      this.setState({ [e.target.name]: e.target.value });
+   }
+
+   onStarClick(nextValue) {
+     this.setState({ rating: nextValue });
    }
 
   //  onSubmit(e) {
@@ -49,28 +54,38 @@ import React, { Component } from 'react'
           </div>
           <div>
             <label> Author: </label><br />
-            <br />
             <input type="text" name="author" value={this.state.author} onChange={this.onChange} />
           </div>
           <div>
             <label> Publisher: </label><br />
-            <br />
             <input type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
           </div>
           <div>
             <label> Publication Date: </label><br />
-            <br />
-            <input type="text" name="publicationDate" value={this.state.publicationDate} onChange={this.onChange} />
+            <input type="text" 
+                   name="publicationDate" 
+                   data-parse="date" 
+                   placeholder="MM/DD//YYYY"
+                    pattern="\d{2}\/\d{2}/\d{4}" 
+                    value={this.state.publicationDate} 
+                    onChange={this.onChange} required
+              />
           </div>
           <div>
             <label> Rating: </label><br />
-            <br />
-            <input type="text" name="rating" value={this.state.publicationDate} onChange={this.onChange} />
+            <StarRatingComponent
+              name = 'rating'
+              starCount={3}
+              value={this.state.rating}
+              onStarClick={this.onStarClick.bind(this)}
+              />
           </div>
           <div>
             <label> Status: </label><br />
-            <br />
-            <input type="text" name="rating" value={this.state.publicationDate} onChange={this.onChange} />
+            <select value={this.state.status} onChange={this.onChange}>
+              <option value="checkedIn">Checked In</option>
+              <option value="checkedOut">Checked Out</option>
+            </select>
           </div>
           <br />
           <button type="submit">Save</button>
