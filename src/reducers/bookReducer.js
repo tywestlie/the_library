@@ -40,6 +40,11 @@ export default function (state = initialState, action) {
         ...state,
         items: action.payload
       };
+    case NEW_BOOK:
+      return{
+        ...state,
+        item: action.payload
+      };
     default:
       return state;
   }

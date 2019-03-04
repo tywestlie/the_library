@@ -24,6 +24,12 @@ import BookForm from './Bookform'
      });
    }
 
+   componentWillReceiveProps(nextProps) {
+     if (nextProps.newBook) {
+       this.props.books.unshift(nextProps.newBook);
+     }
+   }
+
   render() {
     const libItems = this.props.books.map(book =>(
       <div key={book.id}>
@@ -54,7 +60,8 @@ import BookForm from './Bookform'
 }
 
 const mapStateToProps = state => ({
-  books: state.books.items
+  books: state.books.items,
+  newBook: state.books.item
 });
 
 export default connect(mapStateToProps, { fetchBooks })(Books);
