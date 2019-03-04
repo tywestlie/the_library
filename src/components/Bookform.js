@@ -1,6 +1,42 @@
 import React, { Component } from 'react'
 
  class BookForm extends Component {
+
+   constructor(props) {
+     super(props);
+     this.state = {
+       title: '',
+       author: '',
+       publisher: '',
+       publicationDate: '',
+       rating: '',
+       status: '',
+     }
+
+     this.onChange = this.onChange.bind(this);
+    //  this.onSubmit = this.onSubmit.bind(this);
+   }
+
+   onChange(e) {
+     this.setState({ [e.target.name]: e.target.value });
+   }
+
+  //  onSubmit(e) {
+  //    e.preventDefault();
+
+  //    const book = {
+  //      title: this.state.title,
+  //      author: this.state.author,
+  //      publisher: this.state.publisher,
+  //      publicationDate: this.state.publicationDate,
+  //      rating: this.state.rating,
+  //      status: this.state.status,
+
+  //    }
+  //    //call item
+  //    this.props.createBook(book)
+  //  }
+
   render() {
     return (
       <div>
@@ -37,7 +73,7 @@ import React, { Component } from 'react'
             <input type="text" name="rating" value={this.state.publicationDate} onChange={this.onChange} />
           </div>
           <br />
-          <button type="submit">Button</button>
+          <button type="submit">Save</button>
         </form>
       </div>
     )
