@@ -41,6 +41,14 @@ import StarRatingComponent from 'react-star-rating-component';
      }
      //call item
      this.props.newBook(book)
+     this.setState({
+       title: '',
+       author: '',
+       publisher:'',
+       publicationDate: '',
+       raiting: 1, 
+       status: 'checkedIn'
+     });
    }
 
    onStarClick(nextValue, prevValue, name) {
@@ -52,7 +60,7 @@ import StarRatingComponent from 'react-star-rating-component';
     return (
       <div>
         <h1>Add Book</h1>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit} id="add-book-form">
           <div>
             <label>Title: </label>
             <br />

@@ -5,8 +5,6 @@ export const fetchBooks = () => dispatch => {
   return store.getState();
 }
 
-
-
 export const newBook = (book) => dispatch => {
  store.dispatch({
    type: NEW_BOOK,

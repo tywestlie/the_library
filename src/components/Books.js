@@ -20,7 +20,7 @@ import BookForm from './Bookform'
 
    _showBookButton = (bool) => {
      this.setState({
-       showMessage: bool
+       showForm: bool
      });
    }
 
@@ -29,6 +29,7 @@ import BookForm from './Bookform'
        this.props.books.unshift(nextProps.newBook);
      }
    }
+
 
   render() {
     const libItems = this.props.books.map(book =>(
@@ -44,6 +45,7 @@ import BookForm from './Bookform'
           value={book.rating}
           />
       <h3>{book.status}</h3>
+      <br />
       </div>
     ))
     return (
@@ -51,7 +53,7 @@ import BookForm from './Bookform'
         <h1>Books</h1>
         <br/>
         <button onClick={this._showBookButton.bind(null, true)}>Add</button>
-        { this.state.showMessage && ( <BookForm />) }
+        { this.state.showForm && ( <BookForm />) }
         <br/>
         {libItems}
       </div>
