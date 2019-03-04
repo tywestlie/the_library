@@ -15,7 +15,6 @@ import StarRatingComponent from 'react-star-rating-component';
      }
 
      this.onChange = this.onChange.bind(this);
-    //  this.onSubmit = this.onSubmit.bind(this);
    }
 
    onChange(e) {
@@ -25,22 +24,6 @@ import StarRatingComponent from 'react-star-rating-component';
    onStarClick(nextValue) {
      this.setState({ rating: nextValue });
    }
-
-  //  onSubmit(e) {
-  //    e.preventDefault();
-
-  //    const book = {
-  //      title: this.state.title,
-  //      author: this.state.author,
-  //      publisher: this.state.publisher,
-  //      publicationDate: this.state.publicationDate,
-  //      rating: this.state.rating,
-  //      status: this.state.status,
-
-  //    }
-  //    //call item
-  //    this.props.createBook(book)
-  //  }
 
   render() {
     return (
