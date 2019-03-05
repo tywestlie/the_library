@@ -54,15 +54,15 @@ class EditBookForm extends Component {
           <div>
             <label>Title: </label>
             <br />
-            <input type="text" name="title" placeholder={this.state.title} onChange={this.onChange} value={this.state.title} />
+            <input required maxlength="65" type="text" name="title" placeholder={this.state.title} onChange={this.onChange} value={this.state.title} />
           </div>
           <div>
             <label> Author: </label><br />
-            <input type="text" name="author" value={this.state.author} onChange={this.onChange} />
+            <input required maxlength="65" type="text" name="author" value={this.state.author} onChange={this.onChange} />
           </div>
           <div>
             <label> Publisher: </label><br />
-            <input type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
+            <input required maxlength="65" type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
           </div>
           <div>
             <label> Publication Date: </label><br />
