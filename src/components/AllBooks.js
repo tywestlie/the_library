@@ -23,15 +23,16 @@ import store from '../store';
    }
 
    _showAddBookButton = (bool) => {
-     this.setState({
-       showForm: true
-     });
-   }
-   _showEditBookButton = (bool) => {
-     this.setState({
-       showEdit: bool
-     });
-   }
+     if(this.state.showForm === false){
+       this.setState({
+         showForm: true
+       })
+     }else{
+       this.setState({
+         showForm: false
+       })
+     }
+   };
 
   render() {
     return (
