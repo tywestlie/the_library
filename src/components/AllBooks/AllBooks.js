@@ -38,10 +38,10 @@ import store from '../../store';
   render() {
     return (
       <div>
-        <div class='title'>
+        <div className='title'>
          <h1>My Library</h1>
         </div>
-        <button class='add-btn' onClick={this._showAddBookButton}>Add</button>
+        <button className='add-btn' onClick={this._showAddBookButton}>Add</button>
         { this.state.showForm && ( <BookForm store={store} />) }
         {this.state.books.map((book) =>
           <div key={book.id}>

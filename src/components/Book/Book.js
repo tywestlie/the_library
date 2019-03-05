@@ -6,7 +6,7 @@ class Book extends Component {
 
   render() {
     return (
-      <div class='book'>
+      <div className='book'>
         <h2>{this.props.book.title}</h2>
         <hr />
         <p>Author: {this.props.book.author}</p>
