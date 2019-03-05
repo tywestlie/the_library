@@ -1,6 +1,9 @@
 div.book-form{
-  background-color: #A2C0A0;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background-color: #bca6b6;
+  margin: 20px;
+  padding: 10px;
+}
+
+div.book-form h2 {
+  margin: 0;
 }

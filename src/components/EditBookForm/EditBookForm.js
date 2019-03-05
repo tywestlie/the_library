@@ -50,7 +50,7 @@ class EditBookForm extends Component {
   render() {
     return (
       <div class='edit-book-form'>
-        <h1>Edit Book</h1>
+        <h2>Edit Book</h2>
         <form onSubmit={this.onSubmit} id="edit-book-form">
           <div>
             <label>Title: </label>

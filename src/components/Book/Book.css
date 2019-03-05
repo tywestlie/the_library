@@ -1,3 +1,9 @@
 .book {
-  background-color: #A2C0A0;
+  background-color: #dbc5d5;
+  margin: 20px;
+  padding: 10px;
+}
+
+.book h2 {
+  margin: 0;
 }
