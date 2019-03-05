@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { fetchBooks } from '../actions/bookActions';
-
 import Book from './Book'
 import BookForm from './Bookform'
-import Editbookform from './Editbookform';
+import EditBookForm from './Editbookform';
 import store from '../store';
 
  class AllBooks extends Component {
@@ -46,8 +43,8 @@ import store from '../store';
         <br/>
         {this.state.books.map((book) =>
           <div key={book.id}>
-            {book.editing ? <Editbookform book={book} key={book.id} /> :
-              <Book key={book.id} book={book} />}
+            {book.editing ? <EditBookForm store={store} book={book} key={book.id} /> :
+              <Book store={store} key={book.id} book={book} />}
           </div>
         )}
  
@@ -55,10 +52,5 @@ import store from '../store';
     )
   }
 }
-
-// const mapStateToProps = state => ({
-//   books: state.books.items,
-//   newBook: state.books.item
-// });
 
 export default AllBooks;

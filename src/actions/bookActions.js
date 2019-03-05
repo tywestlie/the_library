@@ -3,10 +3,6 @@ import store from '../store';
 
 export const fetchBooks = () => dispatch => {
   store.getState();
-//  store.dispatch({
-//    type: FETCH_BOOKS,
-//    payload: books
-//  })
 }
 
 export const newBook = (book) => dispatch => {

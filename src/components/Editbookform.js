@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-import { editBook } from '../actions/bookActions'
 import StarRatingComponent from 'react-star-rating-component';
 
-class Editbookform extends Component {
-
+class EditBookForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: props.title,
-      author: props.author,
-      publisher: props.publisher,
-      publicationDate: props.publicationDate,
-      rating: props.rating,
-      status: props.status
+      title: '',
+      author: '',
+      publisher: '',
+      publicationDate: '',
+      rating: 1,
+      status: ''
     }
 
     this.onChange = this.onChange.bind(this);
     this.onSelectChange = this.onSelectChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -40,7 +39,7 @@ class Editbookform extends Component {
       editing: false
     }
 
-    this.props.editBook(book)
+    this.props.store.dispatch({ type: 'UPDATE', id: this.props.book.id, data: book })
 
     this.setState({
       title: '',
@@ -56,12 +55,11 @@ class Editbookform extends Component {
     this.setState({ rating: nextValue });
   }
 
-  
   render() {
     return (
       <div>
         <h1>Edit Book</h1>
-        <form onSubmit={this.onSubmit} id="add-book-form">
+        <form onSubmit={this.onSubmit} id="edit-book-form">
           <div>
             <label>Title: </label>
             <br />
@@ -110,4 +108,4 @@ class Editbookform extends Component {
   }
 }
 
-export default Editbookform;
+export default EditBookForm;

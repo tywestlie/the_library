@@ -16,10 +16,22 @@ export default function (state = initialState, action) {
       state.unshift(action.book);
       return state;
     case EDIT_BOOK:
-      return{
-        ...state,
-        item: action.payload
-      };
+      return state.map((book) => book.id === action.id ? { ...book, editing: !book.editing } : book)
+    case 'UPDATE':
+      return state.map((book) => {
+        if (book.id === action.id) {
+          return {
+            ...book,
+            title: action.data.title,
+            author: action.data.author,
+            publisher: action.data.publisher,
+            publicationDate: action.data.publicationDate,
+            rating: action.data.rating,
+            status: action.data.status,
+            editing: !book.editing
+          }
+        } else return book;
+      })
     default:
       return state;
   }
