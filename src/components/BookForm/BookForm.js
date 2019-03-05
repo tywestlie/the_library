@@ -61,7 +61,7 @@ import './BookForm.css';
 
     return (
       <div class='book-form'>
-        <h1>Add Book</h1>
+        <h2>Add Book</h2>
         <form onSubmit={this.onSubmit} id="add-book-form">
           <div>
             <label>Title: </label>

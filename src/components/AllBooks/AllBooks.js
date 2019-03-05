@@ -43,7 +43,6 @@ import store from '../../store';
         </div>
         <button class='add-btn' onClick={this._showAddBookButton}>Add</button>
         { this.state.showForm && ( <BookForm store={store} />) }
-        <br/>
         {this.state.books.map((book) =>
           <div key={book.id}>
             {book.editing ? <EditBookForm store={store} book={book} key={book.id} /> :

@@ -8,6 +8,7 @@ class Book extends Component {
     return (
       <div class='book'>
         <h2>{this.props.book.title}</h2>
+        <hr />
         <p>Author: {this.props.book.author}</p>
         <p>Publisher: {this.props.book.publisher}</p>
         <p>Publication Date: {this.props.book.publicationDate}</p>
