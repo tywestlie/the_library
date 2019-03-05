@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import Book from './Book'
-import BookForm from './Bookform'
-import EditBookForm from './Editbookform';
-import store from '../store';
+import './AllBooks.css'
+import Book from '../Book/Book'
+import BookForm from '../BookForm/BookForm'
+import EditBookForm from '../EditBookForm/EditBookForm';
+import store from '../../store';
 
  class AllBooks extends Component {
 
@@ -29,7 +30,7 @@ import store from '../store';
        })
      }else{
        this.setState({
-         showForm: false
+         showForm: false 
        })
      }
    };
@@ -37,9 +38,10 @@ import store from '../store';
   render() {
     return (
       <div>
-        <h1>My Library</h1>
-        <br/>
-        <button onClick={this._showAddBookButton}>Add</button>
+        <div class='title'>
+         <h1>My Library</h1>
+        </div>
+        <button class='add-btn' onClick={this._showAddBookButton}>Add</button>
         { this.state.showForm && ( <BookForm store={store} />) }
         <br/>
         {this.state.books.map((book) =>

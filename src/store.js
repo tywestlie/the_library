@@ -10,7 +10,7 @@ const initialState = { books:[
     publisher: 'Scribner',
     publicationDate: '01/01/1925',
     rating: 1,
-    status: 'checkedIn',
+    status: 'Checked In',
     editing: false
   },
   {
@@ -20,7 +20,7 @@ const initialState = { books:[
     publisher: 'Random House',
     publicationDate: '02/02/1979',
     rating: 2,
-    status: 'checkedOut',
+    status: 'Checked Out',
     editing: false
 
   },
@@ -31,7 +31,7 @@ const initialState = { books:[
     publisher: 'Dell',
     publicationDate: '11/03/1973',
     rating: 3,
-    status: 'checkedOut',
+    status: 'Checked Out',
     editing: false
   }
 ]}

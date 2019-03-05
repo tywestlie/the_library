@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 // import { Provider } from 'react-redux';
 
-import AllBooks from "./components/AllBooks"
+import AllBooks from "./components/AllBooks/AllBooks"
 
 // import store from './store';
 

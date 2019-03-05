@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
+import './EditBookForm.css'
 
 class EditBookForm extends Component {
   constructor(props) {
@@ -48,21 +49,21 @@ class EditBookForm extends Component {
 
   render() {
     return (
-      <div>
+      <div class='edit-book-form'>
         <h1>Edit Book</h1>
         <form onSubmit={this.onSubmit} id="edit-book-form">
           <div>
             <label>Title: </label>
             <br />
-            <input required maxlength="65" type="text" name="title" placeholder={this.state.title} onChange={this.onChange} value={this.state.title} />
+            <input class='text-limit' required maxlength="64" type="text" name="title" placeholder={this.state.title} onChange={this.onChange} value={this.state.title} />
           </div>
           <div>
             <label> Author: </label><br />
-            <input required maxlength="65" type="text" name="author" value={this.state.author} onChange={this.onChange} />
+            <input class='text-limit' required maxlength="64" type="text" name="author" value={this.state.author} onChange={this.onChange} />
           </div>
           <div>
             <label> Publisher: </label><br />
-            <input required maxlength="65" type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
+            <input class='text-limit' required maxlength="64" type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
           </div>
           <div>
             <label> Publication Date: </label><br />
@@ -77,7 +78,7 @@ class EditBookForm extends Component {
           </div>
           <div>
             <label> Rating: </label><br />
-            <StarRatingComponent
+            <StarRatingComponent class= "browser-default"
               name='rating'
               starCount={3}
               value={this.state.rating}
@@ -87,8 +88,8 @@ class EditBookForm extends Component {
           <div>
             <label> Status: </label><br />
             <select value={this.state.status} onChange={this.onSelectChange}>
-              <option value="checkedIn">Checked In</option>
-              <option value="checkedOut">Checked Out</option>
+              <option value="Checked In">Checked In</option>
+              <option value="Checked Out">Checked Out</option>
             </select>
           </div>
           <br />
