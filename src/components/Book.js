@@ -4,7 +4,6 @@ import StarRatingComponent from 'react-star-rating-component';
 class Book extends Component {
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <h2>{this.props.book.title}</h2>

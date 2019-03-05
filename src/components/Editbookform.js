@@ -5,12 +5,12 @@ class EditBookForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      author: '',
-      publisher: '',
-      publicationDate: '',
-      rating: 1,
-      status: ''
+      title: this.props.book.title,
+      author: this.props.book.author,
+      publisher: this.props.book.publisher,
+      publicationDate: this.props.book.publicationDate,
+      rating: this.props.book.rating,
+      status: this.props.book.status
     }
 
     this.onChange = this.onChange.bind(this);
@@ -24,7 +24,7 @@ class EditBookForm extends Component {
   }
 
   onSelectChange(e) {
-    this.setState({ value: e.target.value });
+    this.setState({ status: e.target.value });
   }
 
   onSubmit(e) {
@@ -40,15 +40,6 @@ class EditBookForm extends Component {
     }
 
     this.props.store.dispatch({ type: 'UPDATE', id: this.props.book.id, data: book })
-
-    this.setState({
-      title: '',
-      author: '',
-      publisher: '',
-      publicationDate: '',
-      raiting: 1,
-      status: 'checkedIn'
-    });
   }
 
   onStarClick(nextValue, prevValue, name) {
