@@ -1,4 +1,4 @@
-import { FETCH_BOOKS, NEW_BOOK } from '../actions/types';
+import { FETCH_BOOKS, NEW_BOOK, EDIT_BOOK } from '../actions/types';
 
 const initialState = {
   items: [
@@ -9,7 +9,8 @@ const initialState = {
       publisher: 'Scribner',
       publicationDate: '01/01/1925',
       rating: 1,
-      status: 'checkedIn'
+      status: 'checkedIn',
+      editing: false
     },
     {
       id: 2,
@@ -18,7 +19,9 @@ const initialState = {
       publisher: 'Random House',
       publicationDate: '02/02/1979',
       rating: 2,
-      status: 'checkedOut'
+      status: 'checkedOut',
+      editing: false
+      
     },
     {
       id: 3,
@@ -27,7 +30,8 @@ const initialState = {
       publisher: 'Dell',
       publicationDate: '11/03/1973',
       rating: 3,
-      status: 'checkedOut'
+      status: 'checkedOut',
+      editing: false
     }
   ],
   item: {}
@@ -41,6 +45,11 @@ export default function (state = initialState, action) {
         items: action.payload
       };
     case NEW_BOOK:
+      return{
+        ...state,
+        item: action.payload
+      };
+    case EDIT_BOOK:
       return{
         ...state,
         item: action.payload

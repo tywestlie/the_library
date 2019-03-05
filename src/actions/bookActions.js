@@ -11,3 +11,7 @@ export const newBook = (book) => dispatch => {
    payload: book
  });
 }
+
+export const editBook = (book) => dispatch => {
+  
+}

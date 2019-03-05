@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { fetchBooks } from '../actions/bookActions';
 import StarRatingComponent from 'react-star-rating-component';
 
+import Book from './Book'
 import BookForm from './Bookform'
+import EditBookForm from './Editbookform';
 
- class Books extends Component {
+ class AllBooks extends Component {
 
   componentWillMount(){
     this.props.fetchBooks();
@@ -14,13 +16,19 @@ import BookForm from './Bookform'
    constructor() {
      super();
      this.state = { 
-       showBookButton: false 
+       showAddBookButton: false,
+       showEditBookButton: false 
       }
    }
 
-   _showBookButton = (bool) => {
+   _showAddBookButton = (bool) => {
      this.setState({
        showForm: bool
+     });
+   }
+   _showEditBookButton = (bool) => {
+     this.setState({
+       showEdit: bool
      });
    }
 
@@ -30,32 +38,15 @@ import BookForm from './Bookform'
      }
    }
 
-
   render() {
-    const libItems = this.props.books.map(book =>(
-      <div key={book.id}>
-      <h3>{book.title}</h3>
-      <h3>{book.author}</h3>
-      <h3>{book.publisher}</h3>
-      <h3>{book.publicationDate}</h3>
-      <StarRatingComponent
-          name="rating"
-          editing={false}
-          starCount={3}
-          value={book.rating}
-          />
-      <h3>{book.status}</h3>
-      <br />
-      </div>
-    ))
     return (
       <div>
         <h1>My Library</h1>
         <br/>
-        <button onClick={this._showBookButton.bind(null, true)}>Add</button>
+        <button onClick={this._showAddBookButton.bind(null, true)}>Add</button>
         { this.state.showForm && ( <BookForm />) }
         <br/>
-        {libItems}
+        {this.props.books.map((book) => <Book key={book.id} book={book}/>)}
       </div>
     )
   }
@@ -66,4 +57,4 @@ const mapStateToProps = state => ({
   newBook: state.books.item
 });
 
-export default connect(mapStateToProps, { fetchBooks })(Books);
+export default connect(mapStateToProps, { fetchBooks })(AllBooks);

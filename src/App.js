@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
 
-import Books from "./components/Books"
+import AllBooks from "./components/AllBooks"
 
 import store from './store';
 
@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-        <Books />
+        <AllBooks />
         </div>
       </Provider>
     );
