@@ -1,4 +1,27 @@
 .App {
-  width: 90%;
-  margin: auto;
+  width: 99%;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #EBF5EE;
+}
+
+.title{
+  background-color:#542344;
+  font-size: 36px;
+  height: 90px;
+  padding: 20px;
+  color: white;
+}
+.title h1 {
+  margin: 0;
+}
+
+.App input.text-limit {
+  width: 62%;
+}
+
+.App button {
+  width: 100px;
+  height: 25px;
+  font-size: 15px;
 }

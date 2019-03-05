@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './AllBooks.css'
 import Book from '../Book/Book'
 import BookForm from '../BookForm/BookForm'
 import EditBookForm from '../EditBookForm/EditBookForm';
@@ -37,9 +38,10 @@ import store from '../../store';
   render() {
     return (
       <div>
-        <h1>My Library</h1>
-        <br/>
-        <button onClick={this._showAddBookButton}>Add</button>
+        <div class='title'>
+         <h1>My Library</h1>
+        </div>
+        <button class='add-btn' onClick={this._showAddBookButton}>Add</button>
         { this.state.showForm && ( <BookForm store={store} />) }
         <br/>
         {this.state.books.map((book) =>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
+import './BookForm.css';
 
  class BookForm extends Component {
 
@@ -48,7 +49,7 @@ import StarRatingComponent from 'react-star-rating-component';
        publisher:'',
        publicationDate: '',
        raiting: 1, 
-       status: 'checkedIn'
+       status: 'Checked In'
      });
    }
 
@@ -59,36 +60,37 @@ import StarRatingComponent from 'react-star-rating-component';
   render() {
 
     return (
-      <div>
+      <div class='book-form'>
         <h1>Add Book</h1>
         <form onSubmit={this.onSubmit} id="add-book-form">
           <div>
             <label>Title: </label>
             <br />
-            <input required maxlength="65" type="text" name="title" onChange={this.onChange} value={this.state.title} />
+            <input class='text-limit' required maxlength="64" type="text" name="title" onChange={this.onChange} value={this.state.title} />
           </div>
           <div>
             <label> Author: </label><br />
-            <input required maxlength="65" type="text" name="author" value={this.state.author} onChange={this.onChange} />
+            <input class='text-limit' required maxlength="64" type="text" name="author" value={this.state.author} onChange={this.onChange} />
           </div>
           <div>
             <label> Publisher: </label><br />
-            <input required maxlength="65" type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
+            <input class='text-limit' required maxlength="64" type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
           </div>
           <div>
             <label> Publication Date: </label><br />
-            <input maxlength="65" type="text" 
+            <input type="text" 
                    name="publicationDate" 
                    data-parse="date" 
                    placeholder="MM/DD//YYYY"
-                    pattern="\d{2}\/\d{2}/\d{4}" 
-                    value={this.state.publicationDate} 
-                    onChange={this.onChange} required
+                   pattern="\d{2}\/\d{2}/\d{4}" 
+                   value={this.state.publicationDate} 
+                   onChange={this.onChange} required
               />
           </div>
           <div>
             <label> Rating: </label><br />
             <StarRatingComponent
+              class= "browser-default"
               name = 'rating'
               starCount={3}
               value={this.state.rating}
@@ -98,8 +100,8 @@ import StarRatingComponent from 'react-star-rating-component';
           <div>
             <label> Status: </label><br />
             <select value={this.state.status.value} onChange={this.onSelectChange}>
-              <option value="checkedIn">Checked In</option>
-              <option value="checkedOut">Checked Out</option>
+              <option value="Checked In">Checked In</option>
+              <option value="Checked Out">Checked Out</option>
             </select>
           </div>
           <br />
