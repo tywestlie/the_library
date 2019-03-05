@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { newBook } from '../actions/bookActions'
+// import { connect } from 'react-redux';
+// import { newBook } from '../actions/bookActions'
 import StarRatingComponent from 'react-star-rating-component';
 
  class BookForm extends Component {
@@ -13,7 +13,7 @@ import StarRatingComponent from 'react-star-rating-component';
        publisher: '',
        publicationDate: '',
        rating: 1,
-       status: ''
+       status: {value: ''}
      }
 
      this.onChange = this.onChange.bind(this);
@@ -25,9 +25,9 @@ import StarRatingComponent from 'react-star-rating-component';
      this.setState({ [e.target.name]: e.target.value });
    }
 
-   onSelectChange(e) {
-     this.setState({ value: e.target.value} );
-   }
+  //  onSelectChange(e) {
+  //    this.setState({ status: e.target.value} );
+  //  }
 
    onSubmit(e) {
      e.preventDefault();
@@ -40,7 +40,10 @@ import StarRatingComponent from 'react-star-rating-component';
        status: this.state.status
      }
      //call item
-     this.props.newBook(book)
+     this.props.store.dispatch({
+       type: 'NEW_BOOK',
+       book: book
+     })
      this.setState({
        title: '',
        author: '',
@@ -96,7 +99,7 @@ import StarRatingComponent from 'react-star-rating-component';
           </div>
           <div>
             <label> Status: </label><br />
-            <select value={this.state.status} onChange={this.onSelectChange}>
+            <select value={this.state.status.value} onChange={this.onChange}>
               <option value="checkedIn">Checked In</option>
               <option value="checkedOut">Checked Out</option>
             </select>
@@ -109,4 +112,4 @@ import StarRatingComponent from 'react-star-rating-component';
   }
 }
 
-export default connect(null, {newBook})(BookForm);
+export default BookForm;

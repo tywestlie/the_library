@@ -1,40 +1,7 @@
 import { FETCH_BOOKS, NEW_BOOK, EDIT_BOOK } from '../actions/types';
 
 const initialState = {
-  items: [
-    {
-      id: 1,
-      title: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald',
-      publisher: 'Scribner',
-      publicationDate: '01/01/1925',
-      rating: 1,
-      status: 'checkedIn',
-      editing: false
-    },
-    {
-      id: 2,
-      title: 'Hitch Hikers Guide To The Galaxy',
-      author: 'Douglas Adams',
-      publisher: 'Random House',
-      publicationDate: '02/02/1979',
-      rating: 2,
-      status: 'checkedOut',
-      editing: false
-      
-    },
-    {
-      id: 3,
-      title: 'Breakfast of Champions',
-      author: 'Kurt Vonnegut',
-      publisher: 'Dell',
-      publicationDate: '11/03/1973',
-      rating: 3,
-      status: 'checkedOut',
-      editing: false
-    }
-  ],
-  item: {}
+  books: []
 };
 
 export default function (state = initialState, action) {
@@ -42,13 +9,12 @@ export default function (state = initialState, action) {
     case FETCH_BOOKS:
       return {
         ...state,
-        items: action.payload
+        books: action.payload
       };
     case NEW_BOOK:
-      return{
-        ...state,
-        item: action.payload
-      };
+      action.book.id = state.length;
+      state.unshift(action.book);
+      return state;
     case EDIT_BOOK:
       return{
         ...state,

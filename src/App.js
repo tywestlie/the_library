@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 
 import AllBooks from "./components/AllBooks"
 
-import store from './store';
+// import store from './store';
 
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      // <Provider store={store}>
         <div className="App">
         <AllBooks />
         </div>
-      </Provider>
+      // </Provider>
     );
   }
 }

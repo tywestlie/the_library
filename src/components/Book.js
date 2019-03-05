@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import StarRatingComponent from 'react-star-rating-component';
 
 class Book extends Component {
@@ -18,9 +17,10 @@ class Book extends Component {
         />
         <p>{this.props.book.status}</p>
         <button>Edit</button>
+
       </div>
     )
   }
 }
 
-export default connect()(Book);
+export default Book;

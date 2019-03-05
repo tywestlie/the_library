@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { editBook } from '../actions/bookActions'
 import StarRatingComponent from 'react-star-rating-component';
 
-class EditBookForm extends Component {
+class Editbookform extends Component {
 
   constructor(props) {
     super(props);
@@ -39,7 +39,7 @@ class EditBookForm extends Component {
       status: this.state.status,
       editing: false
     }
-    //call item
+
     this.props.editBook(book)
 
     this.setState({
@@ -58,7 +58,6 @@ class EditBookForm extends Component {
 
   
   render() {
-    console.log(this.state);
     return (
       <div>
         <h1>Edit Book</h1>
@@ -111,4 +110,4 @@ class EditBookForm extends Component {
   }
 }
 
-export default EditBookForm;
+export default Editbookform;
