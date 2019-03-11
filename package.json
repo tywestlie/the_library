@@ -2,14 +2,14 @@
   "name": "book_library",
   "version": "0.1.0",
   "private": true,
-  "dependcies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-redux": "^6.0.1",
+  "dependenccies": {
+    "react": "~16.8.3",
+    "react-dom": "~16.8.3",
+    "react-redux": "~6.0.1",
     "react-scripts": "2.1.5",
-    "react-star-rating-component": "^1.4.1",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "react-star-rating-component": "~1.4.1",
+    "redux": "~4.0.1",
+    "redux-thunk": "~2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
