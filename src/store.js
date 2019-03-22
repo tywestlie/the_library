@@ -33,6 +33,16 @@ const initialState = { books:[
     rating: 3,
     status: 'Checked Out',
     editing: false
+  },
+  {
+    id: 3,
+    title: 'Foundation',
+    author: 'Issac Asimov',
+    publisher: 'Random House',
+    publicationDate: '1/01/1965',
+    rating: 3,
+    status: 'Checked In',
+    editing: false
   }
 ]}
 

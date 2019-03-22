@@ -1,9 +1,16 @@
 div.book-form{
   background-color: #bca6b6;
-  margin: 20px;
   padding: 10px;
+  width: 65%;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.book-form h2 {
   margin: 0;
+}
+
+.add-text-limit {
+  width: 98%;
 }
