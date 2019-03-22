@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './AllBooks.css'
 import Book from '../Book/Book'
-import BookForm from '../BookForm/BookForm'
+// import BookForm from '../BookForm/BookForm'
 import EditBookForm from '../EditBookForm/EditBookForm';
 import store from '../../store';
 
@@ -16,33 +16,30 @@ import store from '../../store';
    constructor() {
      super();
      this.state = { 
-       showAddBookButton: false,
-       showEditBookButton: false,
+      //  showAddBookButton: false,
+      //  showEditBookButton: false,
        books: store.getState().books
       }
      store.subscribe(this.onstoreUpdate.bind(this))
    }
 
-   _showAddBookButton = (bool) => {
-     if(this.state.showForm === false){
-       this.setState({
-         showForm: true
-       })
-     }else{
-       this.setState({
-         showForm: false 
-       })
-     }
-   };
+  //  _showAddBookButton = (bool) => {
+  //    if(this.state.showForm === false){
+  //      this.setState({
+  //        showForm: true
+  //      })
+  //    }else{
+  //      this.setState({
+  //        showForm: false 
+  //      })
+  //    }
+  //  };
 
   render() {
     return (
       <div className='all-books'>
-        <div className='title'>
-         <h1>My Library</h1>
-        </div>
-        <button className='add-btn' onClick={this._showAddBookButton}>Add</button>
-        { this.state.showForm && ( <BookForm store={store} />) }
+        {/* <button className='add-btn' onClick={this._showAddBookButton}>Add</button>
+        { this.state.showForm && ( <BookForm store={store} />) } */}
         {this.state.books.map((book) =>
           <div key={book.id}>
             {book.editing ? <EditBookForm store={store} book={book} key={book.id} /> :
