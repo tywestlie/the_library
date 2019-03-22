@@ -37,7 +37,7 @@ import store from '../../store';
 
   render() {
     return (
-      <div>
+      <div className='all-books'>
         <div className='title'>
          <h1>My Library</h1>
         </div>

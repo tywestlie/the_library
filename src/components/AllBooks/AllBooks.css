@@ -1,6 +1,11 @@
 div.title{
  background-color:#542344;
 }
+
+div.all-books{
+  display: flex;
+}
+
 button.add-btn{
   margin-left: 20px;
   margin-top: 20px;

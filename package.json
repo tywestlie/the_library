@@ -2,7 +2,7 @@
   "name": "book_library",
   "version": "0.1.0",
   "private": true,
-  "dependenccies": {
+  "dependencies": {
     "react": "~16.8.3",
     "react-dom": "~16.8.3",
     "react-redux": "~6.0.1",
