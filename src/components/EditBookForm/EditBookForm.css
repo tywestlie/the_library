@@ -2,8 +2,14 @@
   background-color: #bca6b6;
   margin: 20px;
   padding: 10px;
+  width: 380px;
+  height: 355px;
 }
 
 .edit-book-form h2 {
   margin: 0;
+}
+
+.edit-text-limit {
+  width: 95%;
 }

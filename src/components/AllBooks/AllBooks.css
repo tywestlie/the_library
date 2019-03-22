@@ -1,8 +1,12 @@
 div.all-books{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-button.add-btn{
+/* button.add-btn{
   margin-left: 20px;
   margin-top: 20px;
-}
+} */

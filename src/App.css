@@ -1,8 +1,9 @@
 .App {
-  width: 99%;
+  width: 100%;
   margin: 0;
   font-family: 'Raleway', sans-serif;
-  background-color: #EBF5EE;
+  /* background-color: #EBF5EE; */
+  height: 100%;
 }
 
 .title{
@@ -16,10 +17,6 @@
   margin: 0;
 }
 
-.App input.text-limit {
-  width: 62%;
-}
-
 .App button {
   width: 100px;
   height: 25px;
@@ -27,4 +24,15 @@
 }
 input {
   margin: 5px;
+}
+
+.add-btn-container {
+  height: 30px;
+}
+
+.add-btn {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }

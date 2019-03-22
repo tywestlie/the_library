@@ -33,9 +33,11 @@ class App extends Component {
         <div className='title'>
           <h1>My Library</h1>
         </div>
-        <button className='add-btn' onClick={this._showAddBookButton}>Add</button>
-        {this.state.showForm && (<BookForm store={store} />)}
-        <AllBooks />
+        <div className='add-btn-container'>
+          <button className='add-btn' onClick={this._showAddBookButton}>Add</button>
+          {this.state.showForm && (<BookForm store={store} />)}
+          <AllBooks />
+        </div>
         </div>
     );
   }

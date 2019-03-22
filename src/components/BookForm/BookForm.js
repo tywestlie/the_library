@@ -66,15 +66,15 @@ import './BookForm.css';
           <div>
             <label>Title: </label>
             <br />
-            <input class='text-limit' required maxlength="64" type="text" name="title" onChange={this.onChange} value={this.state.title} />
+            <input class='add-text-limit' required maxlength="64" type="text" name="title" onChange={this.onChange} value={this.state.title} />
           </div>
           <div>
             <label> Author: </label><br />
-            <input class='text-limit' required maxlength="64" type="text" name="author" value={this.state.author} onChange={this.onChange} />
+            <input class='add-text-limit' required maxlength="64" type="text" name="author" value={this.state.author} onChange={this.onChange} />
           </div>
           <div>
             <label> Publisher: </label><br />
-            <input class='text-limit' required maxlength="64" type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
+            <input class='add-text-limit' required maxlength="64" type="text" name="publisher" value={this.state.publisher} onChange={this.onChange} />
           </div>
           <div>
             <label> Publication Date: </label><br />
@@ -99,7 +99,7 @@ import './BookForm.css';
           </div>
           <div>
             <label> Status: </label><br />
-            <select value={this.state.status.value} onChange={this.onSelectChange}>
+            <select required value={this.state.status.value} onChange={this.onSelectChange}>
               <option value="Checked In">Checked In</option>
               <option value="Checked Out">Checked Out</option>
             </select>
